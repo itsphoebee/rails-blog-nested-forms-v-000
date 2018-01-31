@@ -9,8 +9,8 @@ class Post < ActiveRecord::Base
 
   def tags_attributes=(tag_attributes_hash)
     tag_attributes_hash.each do |i, tag_attribute|
-      binding.pry
-      if tag_attribute.present?
+      #binding.pry
+      if tag_attribute.present? && tag_attribute[:name].present?
         tag = Tag.find_or_create_by(name:tag_attribute[:name])
         if !self.tags.include?(tag)
           self.tags << tag
