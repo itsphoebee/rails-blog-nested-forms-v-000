@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.tags.build(name:'tag_1')
+    @post.tags.build(name:'tag_2')
   end
 
   # GET /posts/1/edit
