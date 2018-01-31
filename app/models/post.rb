@@ -12,5 +12,5 @@ class Post < ActiveRecord::Base
       self.tags << tag
     end
   end
-      
+
 end
