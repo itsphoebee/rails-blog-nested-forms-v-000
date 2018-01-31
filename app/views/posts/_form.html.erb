@@ -25,9 +25,9 @@
 
   <div class="field">
     Create a new tag:
-    <%= f.fields_for :tags do |tag_attributes| %>
-      <%= tag_attributes.label :name %>
-      <%= tag_attributes.text_field :name %>
+    <%= f.fields_for :tags do |tag| %>
+      <%= tag.label :name %>
+      <%= tag.text_field :name %>
     <% end %>
   </div>
 
