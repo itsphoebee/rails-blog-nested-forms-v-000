@@ -6,9 +6,9 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :tags
   validates_presence_of :name, :content
 
-  def tags_attributes=(tag_attributes)
-    tag_attributes.values.each do |tag_attribute|
-      tag = Tag.find_or_create_by(tag_attribute)
+  def tags_attributes=(tag_attributes_hash)
+    tag_attributes_hash.each do |i, tag_attribute|
+      tag = Tag.find_or_create_by(name:tag_attribute[:name])
       if !self.tags.include?(tag)
         self.tags << tag
       end
