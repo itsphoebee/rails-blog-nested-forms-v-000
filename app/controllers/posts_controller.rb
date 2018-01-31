@@ -25,9 +25,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    2.times do
-      @post.tags.build
-    end
+    @post.tags.build(name: 'name 1')
     
     respond_to do |format|
       if @post.save
